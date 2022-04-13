@@ -5,6 +5,7 @@ dist:
     otelcol_version: "0.38.0"
     version: "0.1.0"
 receivers:
+  - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/jaegerreceiver v0.38.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/receiver/prometheusreceiver v0.38.0
   - gomod: github.com/cilium/hubble-otel/receiver v0.0.0-00010101000000-000000000000
 processors:
@@ -58,6 +59,9 @@ exporters:
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/sumologicexporter v0.38.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/tanzuobservabilityexporter v0.38.0
   - gomod: github.com/open-telemetry/opentelemetry-collector-contrib/exporter/zipkinexporter v0.38.0
+extensions:
+  - gomod: "github.com/open-telemetry/opentelemetry-collector-contrib/extension/pprofextension v0.38.0"
+  - gomod: "github.com/open-telemetry/opentelemetry-collector-contrib/extension/healthcheckextension v0.38.0"
 replaces:
   # a fork of any of the modules can be used this way:
   #- github.com/open-telemetry/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter => github.com/errordeveloper/opentelemetry-collector-contrib/exporter/awscloudwatchlogsexporter d8d1ca897
